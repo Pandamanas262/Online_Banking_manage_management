@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block main  %}
+
+<section class="wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-table"></i> Users</h3>
+            <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a href="/dashboard">Home</a></li>
+                <li><i class="fa fa-th-list"></i>Users</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Users
+                </header>
+                {% if messages %}
+                <div class="alert text-success font-weight-bold text-center">
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <table class="table table-bordered table-sm">
+                    <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>User Id</th>
+                        <th>Password</th>
+                        <th>Active</th>
+                        <th>Attempts</th>
+                        <th>Locked</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for bk in users %}
+                    <tr>
+                        <td>{{bk.customer.cname}}</td>
+                        <td>{{bk.userid}}</td>
+                        <td>{{bk.pwd | secretpass}}</td>
+                        <td>{% if bk.active %}
+                            <span class="badge badge-success">Active</span>
+                            {% else %}
+                            <span class="badge badge-danger">InActive</span>
+                            {% endif %}
+                        </td>
+                        <td>{{bk.attempts}}</td>
+                        <td>{% if bk.locked %}
+                            <span class="badge badge-danger">Locked</span>
+                            {% else %}
+                            <span class="badge badge-success">UnLocked</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <!-- page end-->
+</section>
+{% endblock %}

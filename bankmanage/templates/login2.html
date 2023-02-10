@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="zxx">
+<head>
+<title>Online Banking</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Online Banking Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--// Meta tag Keywords -->
+<!-- css files -->
+<link href="{% static 'css/bootstrap2.css' %}" rel="stylesheet" type="text/css" media="all" /> <!-- Bootstrap-Core-CSS -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" /> <!-- Style-CSS --> 
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="all" /> <!-- Banner-Slider-CSS -->
+<!-- //css files -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}"/>
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Condensed&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet">
+<!-- //online-fonts -->
+</head>
+<body>
+
+<!-- navigation -->
+<div class="nav-links">	
+		<div class="header-w3l">
+			<div class="container" style="padding:2px;">
+				<a class="navbar-brand" href="/"><h1 style="padding:10px;"><span>Online</span> Banking Management System</h1></a>
+				<a class="btn btn-primary" style="margin-left: 450px; margin-top: 25px;" href="/"><h4 style="padding:5px;">Back</h4></a>
+				<div class="clearfix"></div>
+			</div>
+		</div>		 
+    <div class="clearfix"></div>
+</div>
+    <!-- // navbar -->
+    <!-- login -->
+<div class="mail" id="login">
+	<div class="container" style="padding-top:59px;">
+		<div class="mail-w3l-agile">
+			<div class="col-md-6 col-sm-6 agileinfo_mail_grid_right">
+				<h3 class="text-cen">Admin Login</h3>
+				<form method="post">
+					{% csrf_token %}
+					<div class="wthree_contact_left_grid">
+						<input type="text" name="userid" placeholder="Enter Username" required="">
+						<input type="password" name="pwd" placeholder="Enter Password" required="">
+					</div>					
+					<input type="submit" value="Login" style="margin-top: 10px;">
+				</form>
+                {% if messages %}                
+                <div class="alert text-danger text-center" style="background-color: white;margin-top:10px; font-weight: bold;">    
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}                    
+                </div>
+                {% endif %} 
+			</div>
+			<div class="col-md-6 col-sm-6 contact-left-w3ls">
+				<div class="w3l-cont-mk">
+					<img style="left:20px; width:500px; height: 400px;" src="{% static 'images/bank.jpg' %}">
+				</div>					
+			</div>
+			
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- //login -->
+    <!-- footer -->
+<div class="footer" style="position: absolute;bottom: 0;width:100%;left:0">
+    <div class="copy-right">
+        <div class="agileinfo_social_icons">
+            <ul class="agileits_social_list">
+                <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                <li><a href="#" class="w3_agile_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <p> &copy; Online Banking Management System</p>
+        </div>
+    </div>
+</div>
+
+<!-- //footer -->
+
+<!-- js files -->
+<!-- js -->
+<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap2.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+<!-- //js -->
+<!-- js for banner -->
+<!-- responsiveslider -->
+	<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+		<script>
+			// You can also use "$(window).load(function() {"
+			$(function () {
+			  // Slideshow 4
+			  $("#slider3").responsiveSlides({
+				auto: true,
+				pager:true,
+				nav:false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+				  $('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+				  $('.events').append("<li>after event fired.</li>");
+				}
+			  });
+		
+			});
+		 </script>
+	<!-- //responsiveslider -->
+	<!-- stats -->
+<script type="text/javascript" src="{% static 'js/numscroller-1.0.js' %}"></script>
+<!-- //stats -->
+<!-- /js for banner -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<!-- smooth scrolling -->
+<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+<!-- //smooth scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		/*
+		var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+		};
+		*/
+		
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		
+	});
+</script>
+<!-- //smooth-scrolling-of-move-up -->  
+<!-- video-js -->
+<script src="{% static 'js/jquery.vide.min.js' %}"></script>
+<!-- //video-js -->
+<!--gallery-js -->
+<script src="{% static 'js/jquery.picEyes.js' %}"></script>
+				<script>
+					$(function(){
+						//picturesEyes($('.demo li'));
+						$('.demo li').picEyes();
+					});
+				</script>
+<!--//gallery-js -->
+<!-- //js files -->
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'cbase.html' %}
+{% block main %}
+
+<section class="wrapper">
+    <!--overview start-->
+    <div class="row mail" id="login">
+        <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-laptop"></i> Account Transfer</h3>
+            <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a href="/cdashboard">Home</a></li>
+                <li><i class="fa fa-laptop"></i>Account Transfer</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Account Transfer
+                </header>
+
+
+                <div class="panel-body">
+                    <div class="form">
+                        <form class="form-validate form-horizontal " method="POST">
+                            {% csrf_token %}
+                            <div class="form-group ">
+                                <label class="control-label col-lg-2">Select Beneficiary<span
+                                        class="required">*</span></label>
+                                <div class="col-lg-10">
+                                    <select name="bid" required class="form-control">
+                                        <option value="">Select Beneficiary</option>
+                                        {% for b in blist %}
+                                        <option value="{{b.id}}">{{b.accno}} - {{b.bname}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <label class="control-label col-lg-2">Amount to Transfer<span
+                                        class="required">*</span></label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" type="text" name="amount"
+                                           placeholder="Amount to Transfer" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button class="btn btn-primary" type="submit">Transfer Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

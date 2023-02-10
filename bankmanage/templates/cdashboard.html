@@ -1,0 +1,54 @@
+{% extends 'cbase.html' %}
+{% block main  %}
+
+<section class="wrapper">
+    <!--overview start-->
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
+            <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a href="/cdashboard">Home</a></li>
+                <li><i class="fa fa-laptop"></i>Dashboard</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Customer Dashboard
+                </header>
+
+                <table class="table table-bordered table-sm">
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>{{nbuser.customer.cname}}</th>
+                        <th>Account Number</th>
+                        <th>{{acc.accno}}</th>
+                    </tr>
+                    <tr>
+                        <th>Account Type</th>
+                        <th>{{acc.actype}}</th>
+                        <th>Available Balance</th>
+                        <th>&#8377; {{acc.bal}}</th>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <th>{{nbuser.customer.address}}</th>
+                        <th>Email Id</th>
+                        <th>{{nbuser.customer.email}}</th>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                        <th>{{nbuser.customer.phone}}</th>
+                        <th>Gender</th>
+                        <th>{{nbuser.customer.gender}}</th>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </div>
+    <!-- page end-->
+</section>
+{% endblock %}
